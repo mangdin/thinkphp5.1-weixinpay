@@ -2,7 +2,7 @@
 
 thinkphp5.1 微信网站扫码支付
 
-将目录下的weixinpay.php移到config目录，修改对应参数即可。
+将目录下的weixin_pc_pay.php移到config目录，修改对应参数即可。
 
 公共函数：
 <pre>
