@@ -15,7 +15,7 @@ class Weixinpay {
     public function __construct(){
         // 如果是在thinkphp中 那么需要补全/Application/Common/Conf/config.php中的配置
         // 如果不是在thinkphp框架中使用；那么注释掉下面一行代码；直接补全 private $config 即可
-        $this->config=Config::get('weixinpay.');
+        $this->config=Config::get('weixin_pc_pay.');
     }
 
     /**
@@ -159,7 +159,7 @@ class Weixinpay {
             // 获取订单号
             $out_trade_no=I('get.out_trade_no',1,'intval');
             // 返回的url
-            $redirect_uri=U('Api/Weixinpay/pay','','',true);
+            $redirect_uri=url('index/weixinpay/pay','','',true);
             $redirect_uri=urlencode($redirect_uri);
             $url='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$config['APPID'].'&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_base&state='.$out_trade_no.'#wechat_redirect';
             redirect($url);
